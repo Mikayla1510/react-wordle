@@ -1,14 +1,15 @@
-import Modal from 'components/Modal';
 import Cell from 'components/Cell';
+import Modal from 'components/Modal';
 import styles from './InfoModal.module.scss';
 
 const InfoModal = ({ isOpen, onClose }) => {
   return (
     <Modal title={'How to play'} isOpen={isOpen} onClose={onClose}>
       <h3>
-        Guess the WORDLE in six tries. Each guess must be a valid five-letter
-        word. Hit the enter button to submit. After each guess, the color of the
-        tiles will change to show how close your guess was to the word.
+        Congratulations on solving for the 4 digits! But there are so many
+        combinations these numbers could go in... Use this Wordle rip off that
+        was totally created well before the evening of Christmas Eve to order
+        the digits a bit faster :D.
       </h3>
       <div className={styles.row}>
         <Cell value="W" status="correct" isCompleted />

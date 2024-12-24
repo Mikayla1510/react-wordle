@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import classNames from 'classnames';
 import { getStatuses } from 'lib/words';
+import { useEffect } from 'react';
 import styles from './Keyboard.module.scss';
 
 const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
@@ -11,7 +11,7 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
       const key = e.key.toUpperCase();
       if (key === 'BACKSPACE') return onDelete();
       if (key === 'ENTER') return onEnter();
-      if (key.length === 1 && key >= 'A' && key <= 'Z') onKeyDown(key);
+      if (key.length === 1 && key >= '0' && key <= '9') onKeyDown(key); //Was A-Z
     };
 
     window.addEventListener('keydown', listener);
@@ -30,7 +30,7 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
   return (
     <div className={styles.keyboard}>
       <div className={styles.row}>
-        {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map(char => (
+        {['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].map(char => (
           <Key
             key={char}
             value={char}
@@ -39,7 +39,7 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
           />
         ))}
       </div>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map(char => (
           <Key
             key={char}
@@ -48,8 +48,8 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
             onClick={handleClick}
           />
         ))}
-      </div>
-      <div className={styles.row}>
+      </div> */}
+      {/* <div className={styles.row}>
         <Key value="DELETE" onClick={handleClick} status="action" />
         {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map(char => (
           <Key
@@ -60,7 +60,7 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
           />
         ))}
         <Key value="ENTER" onClick={handleClick} status="action" />
-      </div>
+      </div> */}
     </div>
   );
 };
