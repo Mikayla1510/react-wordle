@@ -39,28 +39,6 @@ const Keyboard = ({ onEnter, onDelete, onKeyDown, guesses }) => {
           />
         ))}
       </div>
-      {/* <div className={styles.row}>
-        {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map(char => (
-          <Key
-            key={char}
-            value={char}
-            status={charStatuses[char]}
-            onClick={handleClick}
-          />
-        ))}
-      </div> */}
-      {/* <div className={styles.row}>
-        <Key value="DELETE" onClick={handleClick} status="action" />
-        {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map(char => (
-          <Key
-            key={char}
-            value={char}
-            status={charStatuses[char]}
-            onClick={handleClick}
-          />
-        ))}
-        <Key value="ENTER" onClick={handleClick} status="action" />
-      </div> */}
     </div>
   );
 };
